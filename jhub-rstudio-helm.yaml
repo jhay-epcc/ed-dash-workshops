@@ -1,0 +1,1229 @@
+apiVersion: catalog.cattle.io/v1
+kind: App
+metadata:
+  annotations:
+    objectset.rio.cattle.io/applied: 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
+    objectset.rio.cattle.io/id: helm-app
+    objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+    objectset.rio.cattle.io/owner-name: sh.helm.release.v1.ukri-training-jhub.v17
+    objectset.rio.cattle.io/owner-namespace: ukri-training
+  creationTimestamp: "2021-08-11T15:39:09Z"
+  generation: 34
+  labels:
+    objectset.rio.cattle.io/hash: 65ae258c6a89a60a4b3e17c64a6af2d11077a68c
+  managedFields:
+  - apiVersion: catalog.cattle.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:objectset.rio.cattle.io/applied: {}
+          f:objectset.rio.cattle.io/id: {}
+          f:objectset.rio.cattle.io/owner-gvk: {}
+          f:objectset.rio.cattle.io/owner-name: {}
+          f:objectset.rio.cattle.io/owner-namespace: {}
+        f:labels:
+          .: {}
+          f:objectset.rio.cattle.io/hash: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"f432a28f-dbdb-46bd-af87-e847e256147a"}:
+            .: {}
+            f:apiVersion: {}
+            f:blockOwnerDeletion: {}
+            f:controller: {}
+            f:kind: {}
+            f:name: {}
+            f:uid: {}
+      f:spec:
+        .: {}
+        f:chart:
+          .: {}
+          f:metadata:
+            .: {}
+            f:annotations:
+              .: {}
+              f:catalog.cattle.io/ui-source-repo: {}
+              f:catalog.cattle.io/ui-source-repo-type: {}
+            f:apiVersion: {}
+            f:appVersion: {}
+            f:description: {}
+            f:home: {}
+            f:icon: {}
+            f:kubeVersion: {}
+            f:maintainers: {}
+            f:name: {}
+            f:sources: {}
+            f:version: {}
+          f:values:
+            .: {}
+            f:cull:
+              .: {}
+              f:concurrency: {}
+              f:enabled: {}
+              f:every: {}
+              f:maxAge: {}
+              f:removeNamedServers: {}
+              f:timeout: {}
+              f:users: {}
+            f:custom: {}
+            f:debug:
+              .: {}
+              f:enabled: {}
+            f:global: {}
+            f:hub:
+              .: {}
+              f:activeServerLimit: {}
+              f:allowNamedServers: {}
+              f:annotations: {}
+              f:args: {}
+              f:authenticatePrometheus: {}
+              f:baseUrl: {}
+              f:command: {}
+              f:concurrentSpawnLimit: {}
+              f:config:
+                .: {}
+                f:JupyterHub:
+                  .: {}
+                  f:admin_access: {}
+                  f:authenticator_class: {}
+              f:consecutiveFailureLimit: {}
+              f:containerSecurityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:cookieSecret: {}
+              f:db:
+                .: {}
+                f:password: {}
+                f:pvc:
+                  .: {}
+                  f:accessModes: {}
+                  f:annotations: {}
+                  f:selector: {}
+                  f:storage: {}
+                  f:storageClassName: {}
+                  f:subPath: {}
+                f:type: {}
+                f:upgrade: {}
+                f:url: {}
+              f:deploymentStrategy:
+                .: {}
+                f:type: {}
+              f:existingSecret: {}
+              f:extraConfig: {}
+              f:extraConfigMap: {}
+              f:extraContainers: {}
+              f:extraEnv: {}
+              f:extraVolumeMounts: {}
+              f:extraVolumes: {}
+              f:fsGid: {}
+              f:image:
+                .: {}
+                f:name: {}
+                f:pullPolicy: {}
+                f:pullSecrets: {}
+                f:tag: {}
+              f:initContainers: {}
+              f:labels: {}
+              f:livenessProbe:
+                .: {}
+                f:enabled: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:timeoutSeconds: {}
+              f:namedServerLimitPerUser: {}
+              f:networkPolicy:
+                .: {}
+                f:allowedIngressPorts: {}
+                f:egress: {}
+                f:enabled: {}
+                f:ingress: {}
+                f:interNamespaceAccessLabels: {}
+              f:nodeSelector: {}
+              f:pdb:
+                .: {}
+                f:enabled: {}
+                f:minAvailable: {}
+              f:publicURL: {}
+              f:readinessProbe:
+                .: {}
+                f:enabled: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:timeoutSeconds: {}
+              f:redirectToServer: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:service:
+                .: {}
+                f:annotations: {}
+                f:loadBalancerIP: {}
+                f:ports:
+                  .: {}
+                  f:nodePort: {}
+                f:type: {}
+              f:services: {}
+              f:shutdownOnLogout: {}
+              f:templatePaths: {}
+              f:templateVars: {}
+              f:tolerations: {}
+            f:imagePullSecret:
+              .: {}
+              f:automaticReferenceInjection: {}
+              f:create: {}
+              f:email: {}
+              f:password: {}
+              f:registry: {}
+              f:username: {}
+            f:imagePullSecrets: {}
+            f:ingress:
+              .: {}
+              f:annotations: {}
+              f:enabled: {}
+              f:hosts: {}
+              f:pathSuffix: {}
+              f:tls: {}
+            f:prePuller:
+              .: {}
+              f:annotations: {}
+              f:containerSecurityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:continuous:
+                .: {}
+                f:enabled: {}
+              f:extraImages: {}
+              f:extraTolerations: {}
+              f:hook:
+                .: {}
+                f:containerSecurityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:runAsGroup: {}
+                  f:runAsUser: {}
+                f:enabled: {}
+                f:image:
+                  .: {}
+                  f:name: {}
+                  f:pullPolicy: {}
+                  f:pullSecrets: {}
+                  f:tag: {}
+                f:nodeSelector: {}
+                f:podSchedulingWaitDuration: {}
+                f:resources:
+                  .: {}
+                  f:requests:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+                f:tolerations: {}
+              f:pause:
+                .: {}
+                f:containerSecurityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:runAsGroup: {}
+                  f:runAsUser: {}
+                f:image:
+                  .: {}
+                  f:name: {}
+                  f:pullPolicy: {}
+                  f:pullSecrets: {}
+                  f:tag: {}
+              f:pullProfileListImages: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+            f:proxy:
+              .: {}
+              f:annotations: {}
+              f:chp:
+                .: {}
+                f:containerSecurityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:runAsGroup: {}
+                  f:runAsUser: {}
+                f:extraCommandLineFlags: {}
+                f:extraEnv: {}
+                f:image:
+                  .: {}
+                  f:name: {}
+                  f:pullPolicy: {}
+                  f:pullSecrets: {}
+                  f:tag: {}
+                f:livenessProbe:
+                  .: {}
+                  f:enabled: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                f:networkPolicy:
+                  .: {}
+                  f:allowedIngressPorts: {}
+                  f:egress: {}
+                  f:enabled: {}
+                  f:ingress: {}
+                  f:interNamespaceAccessLabels: {}
+                f:nodeSelector: {}
+                f:pdb:
+                  .: {}
+                  f:enabled: {}
+                  f:minAvailable: {}
+                f:readinessProbe:
+                  .: {}
+                  f:enabled: {}
+                  f:failureThreshold: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                f:resources:
+                  .: {}
+                  f:requests:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+                f:tolerations: {}
+              f:deploymentStrategy:
+                .: {}
+                f:rollingUpdate: {}
+                f:type: {}
+              f:https:
+                .: {}
+                f:enabled: {}
+                f:hosts: {}
+                f:letsencrypt:
+                  .: {}
+                  f:acmeServer: {}
+                  f:contactEmail: {}
+                f:manual:
+                  .: {}
+                  f:cert: {}
+                  f:key: {}
+                f:secret:
+                  .: {}
+                  f:crt: {}
+                  f:key: {}
+                  f:name: {}
+                f:type: {}
+              f:labels: {}
+              f:secretSync:
+                .: {}
+                f:containerSecurityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:runAsGroup: {}
+                  f:runAsUser: {}
+                f:image:
+                  .: {}
+                  f:name: {}
+                  f:pullPolicy: {}
+                  f:pullSecrets: {}
+                  f:tag: {}
+                f:resources: {}
+              f:secretToken: {}
+              f:service:
+                .: {}
+                f:annotations: {}
+                f:extraPorts: {}
+                f:labels: {}
+                f:loadBalancerIP: {}
+                f:loadBalancerSourceRanges: {}
+                f:nodePorts:
+                  .: {}
+                  f:http: {}
+                  f:https: {}
+                f:type: {}
+              f:traefik:
+                .: {}
+                f:containerSecurityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:runAsGroup: {}
+                  f:runAsUser: {}
+                f:extraDynamicConfig: {}
+                f:extraEnv: {}
+                f:extraPorts: {}
+                f:extraStaticConfig: {}
+                f:extraVolumeMounts: {}
+                f:extraVolumes: {}
+                f:hsts:
+                  .: {}
+                  f:includeSubdomains: {}
+                  f:maxAge: {}
+                  f:preload: {}
+                f:image:
+                  .: {}
+                  f:name: {}
+                  f:pullPolicy: {}
+                  f:pullSecrets: {}
+                  f:tag: {}
+                f:networkPolicy:
+                  .: {}
+                  f:allowedIngressPorts: {}
+                  f:egress: {}
+                  f:enabled: {}
+                  f:ingress: {}
+                  f:interNamespaceAccessLabels: {}
+                f:nodeSelector: {}
+                f:pdb:
+                  .: {}
+                  f:enabled: {}
+                  f:minAvailable: {}
+                f:resources: {}
+                f:tolerations: {}
+            f:rbac:
+              .: {}
+              f:enabled: {}
+            f:scheduling:
+              .: {}
+              f:corePods:
+                .: {}
+                f:nodeAffinity:
+                  .: {}
+                  f:matchNodePurpose: {}
+              f:podPriority:
+                .: {}
+                f:defaultPriority: {}
+                f:enabled: {}
+                f:globalDefault: {}
+                f:userPlaceholderPriority: {}
+              f:userPlaceholder:
+                .: {}
+                f:containerSecurityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:runAsGroup: {}
+                  f:runAsUser: {}
+                f:enabled: {}
+                f:replicas: {}
+              f:userPods:
+                .: {}
+                f:nodeAffinity:
+                  .: {}
+                  f:matchNodePurpose: {}
+              f:userScheduler:
+                .: {}
+                f:containerSecurityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:runAsGroup: {}
+                  f:runAsUser: {}
+                f:enabled: {}
+                f:image:
+                  .: {}
+                  f:name: {}
+                  f:pullPolicy: {}
+                  f:pullSecrets: {}
+                  f:tag: {}
+                f:logLevel: {}
+                f:nodeSelector: {}
+                f:pdb:
+                  .: {}
+                  f:enabled: {}
+                  f:minAvailable: {}
+                f:plugins:
+                  .: {}
+                  f:score:
+                    .: {}
+                    f:disabled: {}
+                    f:enabled: {}
+                f:replicas: {}
+                f:resources:
+                  .: {}
+                  f:requests:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+                f:tolerations: {}
+            f:singleuser:
+              .: {}
+              f:cloudMetadata:
+                .: {}
+                f:blockWithIptables: {}
+                f:ip: {}
+              f:cmd: {}
+              f:cpu:
+                .: {}
+                f:guarantee: {}
+                f:limit: {}
+              f:defaultUrl: {}
+              f:events: {}
+              f:extraAnnotations: {}
+              f:extraContainers: {}
+              f:extraEnv: {}
+              f:extraLabels:
+                .: {}
+                f:hub.jupyter.org/network-access-hub: {}
+              f:extraNodeAffinity:
+                .: {}
+                f:preferred: {}
+                f:required: {}
+              f:extraPodAffinity:
+                .: {}
+                f:preferred: {}
+                f:required: {}
+              f:extraPodAntiAffinity:
+                .: {}
+                f:preferred: {}
+                f:required: {}
+              f:extraPodConfig: {}
+              f:extraResource:
+                .: {}
+                f:guarantees: {}
+                f:limits: {}
+              f:extraTolerations: {}
+              f:fsGid: {}
+              f:image:
+                .: {}
+                f:name: {}
+                f:pullPolicy: {}
+                f:pullSecrets: {}
+                f:tag: {}
+              f:initContainers: {}
+              f:lifecycleHooks: {}
+              f:memory:
+                .: {}
+                f:guarantee: {}
+                f:limit: {}
+              f:networkPolicy:
+                .: {}
+                f:allowedIngressPorts: {}
+                f:egress: {}
+                f:enabled: {}
+                f:ingress: {}
+                f:interNamespaceAccessLabels: {}
+              f:networkTools:
+                .: {}
+                f:image:
+                  .: {}
+                  f:name: {}
+                  f:pullPolicy: {}
+                  f:pullSecrets: {}
+                  f:tag: {}
+              f:nodeSelector: {}
+              f:podNameTemplate: {}
+              f:profileList: {}
+              f:serviceAccountName: {}
+              f:startTimeout: {}
+              f:storage:
+                .: {}
+                f:capacity: {}
+                f:dynamic:
+                  .: {}
+                  f:pvcNameTemplate: {}
+                  f:storageAccessModes: {}
+                  f:storageClass: {}
+                  f:volumeNameTemplate: {}
+                f:extraLabels: {}
+                f:extraVolumeMounts: {}
+                f:extraVolumes: {}
+                f:homeMountPath: {}
+                f:static:
+                  .: {}
+                  f:pvcName: {}
+                  f:subPath: {}
+                f:type: {}
+              f:uid: {}
+        f:helmVersion: {}
+        f:info:
+          .: {}
+          f:description: {}
+          f:firstDeployed: {}
+          f:lastDeployed: {}
+          f:notes: {}
+          f:status: {}
+        f:name: {}
+        f:namespace: {}
+        f:resources: {}
+        f:values:
+          .: {}
+          f:global:
+            .: {}
+            f:cattle:
+              .: {}
+              f:clusterId: {}
+              f:clusterName: {}
+              f:rkePathPrefix: {}
+              f:rkeWindowsPathPrefix: {}
+              f:systemDefaultRegistry: {}
+              f:url: {}
+            f:systemDefaultRegistry: {}
+          f:hub:
+            .: {}
+            f:baseUrl: {}
+          f:proxy:
+            .: {}
+            f:secretToken: {}
+          f:singleuser:
+            .: {}
+            f:cpu:
+              .: {}
+              f:guarantee: {}
+              f:limit: {}
+            f:defaultUrl: {}
+            f:image:
+              .: {}
+              f:name: {}
+              f:tag: {}
+            f:memory:
+              .: {}
+              f:limit: {}
+            f:profileList: {}
+            f:storage:
+              .: {}
+              f:extraVolumeMounts: {}
+              f:extraVolumes: {}
+        f:version: {}
+      f:status:
+        .: {}
+        f:observedGeneration: {}
+        f:summary:
+          .: {}
+          f:state: {}
+    manager: agent
+    operation: Update
+    time: "2021-08-30T11:33:16Z"
+  name: ukri-training-jhub
+  namespace: ukri-training
+  ownerReferences:
+  - apiVersion: v1
+    blockOwnerDeletion: false
+    controller: true
+    kind: Secret
+    name: sh.helm.release.v1.ukri-training-jhub.v17
+    uid: f432a28f-dbdb-46bd-af87-e847e256147a
+  resourceVersion: "15867691"
+  uid: afa5f119-39e2-4cf0-b14b-588451b68606
+spec:
+  chart:
+    metadata:
+      annotations:
+        catalog.cattle.io/ui-source-repo: jupyterhub
+        catalog.cattle.io/ui-source-repo-type: cluster
+      apiVersion: v1
+      appVersion: 1.3.0
+      description: Multi-user Jupyter installation
+      home: https://z2jh.jupyter.org
+      icon: https://jupyter.org/assets/hublogo.svg
+      kubeVersion: '>=1.14.0-0'
+      maintainers:
+      - email: erik@sundellopensource.se
+        name: Erik Sundell
+      - name: Simon Li
+        url: https://github.com/manics/
+      name: jupyterhub
+      sources:
+      - https://github.com/jupyterhub/zero-to-jupyterhub-k8s
+      version: 0.11.1
+    values:
+      cull:
+        concurrency: 10
+        enabled: true
+        every: 600
+        maxAge: 0
+        removeNamedServers: false
+        timeout: 3600
+        users: false
+      custom: {}
+      debug:
+        enabled: false
+      global: {}
+      hub:
+        activeServerLimit: null
+        allowNamedServers: false
+        annotations: {}
+        args: null
+        authenticatePrometheus: null
+        baseUrl: /
+        command: null
+        concurrentSpawnLimit: 64
+        config:
+          JupyterHub:
+            admin_access: true
+            authenticator_class: dummy
+        consecutiveFailureLimit: 5
+        containerSecurityContext:
+          allowPrivilegeEscalation: false
+          runAsGroup: 1000
+          runAsUser: 1000
+        cookieSecret: null
+        db:
+          password: null
+          pvc:
+            accessModes:
+            - ReadWriteOnce
+            annotations: {}
+            selector: {}
+            storage: 1Gi
+            storageClassName: null
+            subPath: null
+          type: sqlite-pvc
+          upgrade: null
+          url: null
+        deploymentStrategy:
+          type: Recreate
+        existingSecret: null
+        extraConfig: {}
+        extraConfigMap: {}
+        extraContainers: null
+        extraEnv: {}
+        extraVolumeMounts: null
+        extraVolumes: null
+        fsGid: 1000
+        image:
+          name: jupyterhub/k8s-hub
+          pullPolicy: ""
+          pullSecrets: null
+          tag: 0.11.1
+        initContainers: null
+        labels: {}
+        livenessProbe:
+          enabled: true
+          failureThreshold: 30
+          initialDelaySeconds: 300
+          periodSeconds: 10
+          timeoutSeconds: 3
+        namedServerLimitPerUser: null
+        networkPolicy:
+          allowedIngressPorts: null
+          egress:
+          - to:
+            - ipBlock:
+                cidr: 0.0.0.0/0
+          enabled: true
+          ingress: null
+          interNamespaceAccessLabels: ignore
+        nodeSelector: {}
+        pdb:
+          enabled: false
+          minAvailable: 1
+        publicURL: null
+        readinessProbe:
+          enabled: true
+          failureThreshold: 1000
+          initialDelaySeconds: 0
+          periodSeconds: 2
+          timeoutSeconds: 1
+        redirectToServer: null
+        resources:
+          requests:
+            cpu: 200m
+            memory: 512Mi
+        service:
+          annotations: {}
+          loadBalancerIP: null
+          ports:
+            nodePort: null
+          type: ClusterIP
+        services: {}
+        shutdownOnLogout: null
+        templatePaths: null
+        templateVars: {}
+        tolerations: null
+      imagePullSecret:
+        automaticReferenceInjection: true
+        create: false
+        email: ""
+        password: ""
+        registry: ""
+        username: ""
+      imagePullSecrets: null
+      ingress:
+        annotations: {}
+        enabled: false
+        hosts: null
+        pathSuffix: ""
+        tls: null
+      prePuller:
+        annotations: {}
+        containerSecurityContext:
+          allowPrivilegeEscalation: false
+          runAsGroup: 65534
+          runAsUser: 65534
+        continuous:
+          enabled: true
+        extraImages: {}
+        extraTolerations: null
+        hook:
+          containerSecurityContext:
+            allowPrivilegeEscalation: false
+            runAsGroup: 65534
+            runAsUser: 65534
+          enabled: true
+          image:
+            name: jupyterhub/k8s-image-awaiter
+            pullPolicy: ""
+            pullSecrets: null
+            tag: 0.11.1
+          nodeSelector: {}
+          podSchedulingWaitDuration: 10
+          resources:
+            requests:
+              cpu: 0
+              memory: 0
+          tolerations: null
+        pause:
+          containerSecurityContext:
+            allowPrivilegeEscalation: false
+            runAsGroup: 65534
+            runAsUser: 65534
+          image:
+            name: k8s.gcr.io/pause
+            pullPolicy: ""
+            pullSecrets: null
+            tag: "3.2"
+        pullProfileListImages: true
+        resources:
+          requests:
+            cpu: 0
+            memory: 0
+      proxy:
+        annotations: {}
+        chp:
+          containerSecurityContext:
+            allowPrivilegeEscalation: false
+            runAsGroup: 65534
+            runAsUser: 65534
+          extraCommandLineFlags: null
+          extraEnv: {}
+          image:
+            name: jupyterhub/configurable-http-proxy
+            pullPolicy: ""
+            pullSecrets: null
+            tag: 4.2.2
+          livenessProbe:
+            enabled: true
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          networkPolicy:
+            allowedIngressPorts:
+            - http
+            - https
+            egress:
+            - to:
+              - ipBlock:
+                  cidr: 0.0.0.0/0
+            enabled: true
+            ingress: null
+            interNamespaceAccessLabels: ignore
+          nodeSelector: {}
+          pdb:
+            enabled: false
+            minAvailable: 1
+          readinessProbe:
+            enabled: true
+            failureThreshold: 1000
+            initialDelaySeconds: 0
+            periodSeconds: 2
+          resources:
+            requests:
+              cpu: 200m
+              memory: 512Mi
+          tolerations: null
+        deploymentStrategy:
+          rollingUpdate: null
+          type: Recreate
+        https:
+          enabled: false
+          hosts: null
+          letsencrypt:
+            acmeServer: https://acme-v02.api.letsencrypt.org/directory
+            contactEmail: ""
+          manual:
+            cert: null
+            key: null
+          secret:
+            crt: tls.crt
+            key: tls.key
+            name: ""
+          type: letsencrypt
+        labels: {}
+        secretSync:
+          containerSecurityContext:
+            allowPrivilegeEscalation: false
+            runAsGroup: 65534
+            runAsUser: 65534
+          image:
+            name: jupyterhub/k8s-secret-sync
+            pullPolicy: ""
+            pullSecrets: null
+            tag: 0.11.1
+          resources: {}
+        secretToken: ""
+        service:
+          annotations: {}
+          extraPorts: null
+          labels: {}
+          loadBalancerIP: null
+          loadBalancerSourceRanges: null
+          nodePorts:
+            http: null
+            https: null
+          type: LoadBalancer
+        traefik:
+          containerSecurityContext:
+            allowPrivilegeEscalation: false
+            runAsGroup: 65534
+            runAsUser: 65534
+          extraDynamicConfig: {}
+          extraEnv: {}
+          extraPorts: null
+          extraStaticConfig: {}
+          extraVolumeMounts: null
+          extraVolumes: null
+          hsts:
+            includeSubdomains: false
+            maxAge: 15724800
+            preload: false
+          image:
+            name: traefik
+            pullPolicy: ""
+            pullSecrets: null
+            tag: v2.3.7
+          networkPolicy:
+            allowedIngressPorts:
+            - http
+            - https
+            egress:
+            - to:
+              - ipBlock:
+                  cidr: 0.0.0.0/0
+            enabled: true
+            ingress: null
+            interNamespaceAccessLabels: ignore
+          nodeSelector: {}
+          pdb:
+            enabled: false
+            minAvailable: 1
+          resources: {}
+          tolerations: null
+      rbac:
+        enabled: true
+      scheduling:
+        corePods:
+          nodeAffinity:
+            matchNodePurpose: prefer
+        podPriority:
+          defaultPriority: 0
+          enabled: false
+          globalDefault: false
+          userPlaceholderPriority: -10
+        userPlaceholder:
+          containerSecurityContext:
+            allowPrivilegeEscalation: false
+            runAsGroup: 65534
+            runAsUser: 65534
+          enabled: true
+          replicas: 0
+        userPods:
+          nodeAffinity:
+            matchNodePurpose: prefer
+        userScheduler:
+          containerSecurityContext:
+            allowPrivilegeEscalation: false
+            runAsGroup: 65534
+            runAsUser: 65534
+          enabled: true
+          image:
+            name: k8s.gcr.io/kube-scheduler
+            pullPolicy: ""
+            pullSecrets: null
+            tag: v1.19.7
+          logLevel: 4
+          nodeSelector: {}
+          pdb:
+            enabled: true
+            minAvailable: 1
+          plugins:
+            score:
+              disabled:
+              - name: SelectorSpread
+              - name: TaintToleration
+              - name: PodTopologySpread
+              - name: NodeResourcesBalancedAllocation
+              - name: NodeResourcesLeastAllocated
+              - name: NodePreferAvoidPods
+              - name: NodeAffinity
+              - name: InterPodAffinity
+              - name: ImageLocality
+              enabled:
+              - name: NodePreferAvoidPods
+                weight: 161051
+              - name: NodeAffinity
+                weight: 14631
+              - name: InterPodAffinity
+                weight: 1331
+              - name: NodeResourcesMostAllocated
+                weight: 121
+              - name: ImageLocality
+                weight: 11
+          replicas: 2
+          resources:
+            requests:
+              cpu: 50m
+              memory: 256Mi
+          tolerations: null
+      singleuser:
+        cloudMetadata:
+          blockWithIptables: true
+          ip: 169.254.169.254
+        cmd: jupyterhub-singleuser
+        cpu:
+          guarantee: null
+          limit: null
+        defaultUrl: null
+        events: true
+        extraAnnotations: {}
+        extraContainers: null
+        extraEnv: {}
+        extraLabels:
+          hub.jupyter.org/network-access-hub: "true"
+        extraNodeAffinity:
+          preferred: null
+          required: null
+        extraPodAffinity:
+          preferred: null
+          required: null
+        extraPodAntiAffinity:
+          preferred: null
+          required: null
+        extraPodConfig: {}
+        extraResource:
+          guarantees: {}
+          limits: {}
+        extraTolerations: null
+        fsGid: 100
+        image:
+          name: jupyterhub/k8s-singleuser-sample
+          pullPolicy: ""
+          pullSecrets: null
+          tag: 0.11.1
+        initContainers: null
+        lifecycleHooks: {}
+        memory:
+          guarantee: 1G
+          limit: null
+        networkPolicy:
+          allowedIngressPorts: null
+          egress:
+          - to:
+            - ipBlock:
+                cidr: 0.0.0.0/0
+                except:
+                - 169.254.169.254/32
+          enabled: true
+          ingress: null
+          interNamespaceAccessLabels: ignore
+        networkTools:
+          image:
+            name: jupyterhub/k8s-network-tools
+            pullPolicy: ""
+            pullSecrets: null
+            tag: 0.11.1
+        nodeSelector: {}
+        podNameTemplate: null
+        profileList: null
+        serviceAccountName: null
+        startTimeout: 300
+        storage:
+          capacity: 10Gi
+          dynamic:
+            pvcNameTemplate: claim-{username}{servername}
+            storageAccessModes:
+            - ReadWriteOnce
+            storageClass: null
+            volumeNameTemplate: volume-{username}{servername}
+          extraLabels: {}
+          extraVolumeMounts: null
+          extraVolumes: null
+          homeMountPath: /home/jovyan
+          static:
+            pvcName: null
+            subPath: '{username}'
+          type: dynamic
+        uid: 1000
+  helmVersion: 3
+  info:
+    description: Upgrade complete
+    firstDeployed: "2021-08-11T15:39:08Z"
+    lastDeployed: "2021-08-30T11:32:55Z"
+    notes: |
+      Thank you for installing JupyterHub!
+
+      Your release is named ukri-training-jhub and installed into the namespace ukri-training.
+
+      You can find if the hub and proxy is ready by doing:
+
+       kubectl --namespace=ukri-training get pod
+
+      and watching for both those pods to be in status 'Running'.
+
+      You can find the public IP of the JupyterHub by doing:
+
+       kubectl --namespace=ukri-training get svc proxy-public
+
+      It might take a few minutes for it to appear!
+
+      Note that this is still an alpha release! If you have questions, feel free to
+        1. Read the guide at https://z2jh.jupyter.org
+        2. Chat with us at https://gitter.im/jupyterhub/jupyterhub
+        3. File issues at https://github.com/jupyterhub/zero-to-jupyterhub-k8s/issues
+    status: deployed
+  name: ukri-training-jhub
+  namespace: ukri-training
+  resources:
+  - apiVersion: networking.k8s.io/v1
+    kind: NetworkPolicy
+    name: hub
+    namespace: ukri-training
+  - apiVersion: networking.k8s.io/v1
+    kind: NetworkPolicy
+    name: proxy
+    namespace: ukri-training
+  - apiVersion: networking.k8s.io/v1
+    kind: NetworkPolicy
+    name: singleuser
+    namespace: ukri-training
+  - apiVersion: policy/v1beta1
+    kind: PodDisruptionBudget
+    name: user-placeholder
+    namespace: ukri-training
+  - apiVersion: policy/v1beta1
+    kind: PodDisruptionBudget
+    name: user-scheduler
+    namespace: ukri-training
+  - apiVersion: v1
+    kind: ServiceAccount
+    name: hub
+    namespace: ukri-training
+  - apiVersion: v1
+    kind: ServiceAccount
+    name: user-scheduler
+    namespace: ukri-training
+  - apiVersion: v1
+    kind: Secret
+    name: hub-secret
+    namespace: ukri-training
+  - apiVersion: v1
+    kind: ConfigMap
+    name: hub-config
+    namespace: ukri-training
+  - apiVersion: v1
+    kind: ConfigMap
+    name: user-scheduler
+    namespace: ukri-training
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: hub-db-dir
+    namespace: ukri-training
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    name: ukri-training-jhub-user-scheduler
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    name: ukri-training-jhub-user-scheduler
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: Role
+    name: hub
+    namespace: ukri-training
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    name: hub
+    namespace: ukri-training
+  - apiVersion: v1
+    kind: Service
+    name: hub
+    namespace: ukri-training
+  - apiVersion: v1
+    kind: Service
+    name: proxy-api
+    namespace: ukri-training
+  - apiVersion: v1
+    kind: Service
+    name: proxy-public
+    namespace: ukri-training
+  - apiVersion: apps/v1
+    kind: DaemonSet
+    name: continuous-image-puller
+    namespace: ukri-training
+  - apiVersion: apps/v1
+    kind: Deployment
+    name: hub
+    namespace: ukri-training
+  - apiVersion: apps/v1
+    kind: Deployment
+    name: proxy
+    namespace: ukri-training
+  - apiVersion: apps/v1
+    kind: Deployment
+    name: user-scheduler
+    namespace: ukri-training
+  - apiVersion: apps/v1
+    kind: StatefulSet
+    name: user-placeholder
+    namespace: ukri-training
+  values:
+    global:
+      cattle:
+        clusterId: c-gqsn6
+        clusterName: testranchtwo
+        rkePathPrefix: ""
+        rkeWindowsPathPrefix: ""
+        systemDefaultRegistry: ""
+        url: https://rancher-admin
+      systemDefaultRegistry: ""
+    hub:
+      baseUrl: /ed-dash-hub
+    proxy:
+      secretToken: 35d08626fbccb4d7187937df0b19a396c6ba9ddcd07db65d3fbd52b0d0ebf7ef
+    singleuser:
+      cpu:
+        guarantee: 0.5
+        limit: 2
+      defaultUrl: /lab
+      image:
+        name: jupyter/minimal-notebook
+        tag: 584f43f06586
+      memory:
+        limit: 8G
+      profileList:
+      - description: RStudio Server Trial Container
+        display_name: RStudio Server
+        kubespawner_override:
+          image: jhayepcc/jupyter_rstudio:0.2.0.2
+          imagePullPolicy: always
+          lifecycle_hooks:
+            postStart:
+              exec:
+                command:
+                - /bin/sh
+                - -c
+                - echo Hello from overridden handler > $HOME/message; wget https://raw.githubusercontent.com/jhay-epcc/ed-dash-workshops/intro-to-stats/.Rprofile
+                  /home/jovyan/.Rprofile; touch /home/jovyan/post-hook-ran-ok
+      storage:
+        extraVolumeMounts:
+        - mountPath: /dev/shm
+          name: shm-volume
+        extraVolumes:
+        - emptyDir:
+            medium: Memory
+          name: shm-volume
+  version: 17
+status:
+  observedGeneration: 34
+  summary:
+    state: deployed
+
