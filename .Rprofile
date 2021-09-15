@@ -32,7 +32,6 @@ dat <- NHANES::NHANESraw %>%
                    UrineFlow2,
                    PregnantNow)) %>% # remove variables which will not be used
   dplyr::select(-c(Race3, 
-                   Testosterone,
                    TVHrsDay, 
                    CompHrsDay,
                    TVHrsDayChild,
