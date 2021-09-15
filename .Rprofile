@@ -61,3 +61,12 @@ dat <- RNHANES::nhanes_load_data(c("CBC_F"), "2009-2010") %>%
   dplyr::rename(ID = SEQN)
 
 rm(prop)
+
+library(NHANES)
+library(RNHANES)
+library(ggplot2)
+library(jtools)
+library(interactions)
+library(patchwork)
+library(dplyr)
+library(tidyr)
