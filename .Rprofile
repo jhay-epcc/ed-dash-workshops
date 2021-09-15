@@ -1,12 +1,3 @@
-library(NHANES)
-library(RNHANES)
-library(ggplot2)
-library(jtools)
-library(interactions)
-library(patchwork)
-library(dplyr)
-library(tidyr)
-
 library(utils)
 
 # proportions representing a simple random sample
