@@ -1,4 +1,5 @@
 library(utils)
+for (pkg in rownames(installed.packages(priority="base"))) library(pkg, character.only=TRUE)
 
 # proportions representing a simple random sample
 prop <- as.numeric(table(NHANES::NHANES$Race1)/nrow(NHANES::NHANES))
