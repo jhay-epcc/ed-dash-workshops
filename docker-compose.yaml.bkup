@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  reverse1:
+    container_name: reverse1
+    hostname: reverse1
+    image: nginx
+    ports:
+      - 8080:80
+    volumes:
+      - ./reverse1/nginx:/etc/nginx
+    networks:
+      bridge:
+        ipv4_address: 172.17.0.3
+  reverse2:
+    container_name: reverse2
+    hostname: reverse2
+    image: nginx
+    ports:
+      - 8090:80
+    volumes:
+      - ./reverse2/nginx:/etc/nginx
+    networks:
+      bridge:
+        ipv4_address: 172.17.0.4
+
+networks:
+  app_net:
+    driver: bridge
+    enable_ipv6: false 
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.17.1.0/28
+          gateway: 172.17.1.1
