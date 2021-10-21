@@ -1,11 +1,3 @@
-library("utils")
-if (!"BiocManager" %in% rownames(installed.packages())) {
-    install.packages("BiocManager")
-}
-download.file("https://raw.githubusercontent.com/carpentries-incubator/high-dimensional-stats-r/gh-pages/dependencies.csv", destfile="dependencies.csv")
-table <- read.table('dependencies.csv')
-BiocManager::install(table[[1]])
-
 dir.create("data", showWarnings = FALSE)
 data_files <- c(
     "cancer_expression.rds",
