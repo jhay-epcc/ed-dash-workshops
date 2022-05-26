@@ -676,7 +676,20 @@ spec:
         deploymentStrategy:
           type: Recreate
         existingSecret: null
-        extraConfig: {}
+        extraConfig:
+          securityHeaders: |
+            c.Spawner.args = ['--NotebookApp.allow_origin=*']
+            c.JupyterHub.tornado_settings = {
+              "headers": {
+                "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+                "X-Frame-Options": "ALLOW",
+                "X-Content-Type-Options": "nosniff",
+                "X-XSS-Protection": "1; mode=block",
+                "Content-Security-Policy": "frame-ancestors 'self'; form-action 'self'; default-src 'self'; script-src https://secure.epcc.ed.ac.uk/ 'sha256-HpES7ISKGewwTWBJKQPTekY7l5rpBTZJB4Adl6puSpY=' 'sha256-YAi26gVMq7D5zecw4eGN3DYK2gkQZRNXHNzWhpakdW0=' 'sha256-ZCm73L8/L1LAbFDsdkZe6CY4AeVWV+kI9wJJ1kHj3hA=' 'sha256-xSzbVVuz5hotNpP1H9ykv7vkOi/R1eobHpX/RbHR5WU=' 'sha256-YPCg9CZujwfknyf1mtycCgxA8Sq7XmRob4Ne38zsYnQ=' 'sha256-BN9KPxac66iQaoceExB5j0SQX7y4XsXjc9D2tX/gFZ8=' 'sha256-KuS+AiwIPNvRwjbkagG1Pblqcjn4rCSnx7hCYqq6d+A=' 'sha256-na1p9LVz1XW4PfWEQEZTH5XviYHsQfeIoPBw0HFE/ec=' 'sha256-KSnhrb0E+4hpJjw2YtkSFqJAT8ACBd7SRlDRbqVStGc=' 'sha256-Bhb6PB9W0S2nsPTcdYHFSqfJc7UKa9ixtiSSbX9hXf8=' 'sha256-Wmk/SgAb7daZ5YL4XJ08dxiO4+8c/8+4MkZH4q4F1qk=' 'sha256-QZhZfI0G5BDbklMJkbC1sCiombykMPZV3cU6dLhvn80=' 'sha256-Wsjn5dsDH4GE0rQsRJ40ima191qKFzm+/paEnnUwez8=' 'sha256-i0qvP4T0zpGZgpAbQ739hP4sJbWixi8Fhd1Rb1u87Ew=' 'sha256-UqaAM2MrD4vNyVCSDARDsK6SDwA/fq3yncWsjXQ0b/Q=' 'sha256-KxqoCIPQSVpQ4b8Vy6uEQqH7YJnU2cnoh9+H1v9ICJg=' 'sha256-3YALnHetYscs0zEAa3hEPXTHlNnv1S5lYpQLsp0J7+Q=' 'sha256-bbtoFLHtJ5KyoTzVyG8a2q5AqnYI7BDR5dl7Lo0iYtA=' 'sha256-5xHfHdGLGtxjQlyu6056DgvkPyR80T3dEpMO8G3EbA0=' 'sha256-kI26C2dESaqPxMSpwI1V98RGwoFvM2c3H14rm/18iTA=' 'sha256-xShn9Z0qjOPP4JfamnQjNuSWYi50w6OjSZHzxYcokIg=' 'sha256-0dbP9hj/VFstObTvVA861kVBYEfID26Y56MsZh36+Ow=' 'sha256-vTfN5LUslCqqyfkz8KuwdNVy1wiWjW8aBQUBhODGsPw=' 'sha256-YhrgUrMUP1Ju734Kk7/gQL6bJ1XTN+Q7JtBiqzurXR4=' 'sha256-UZ+GGv1XGoAFqcn5hVgZ59Ih5XDy3GsAlKOeP0EvgUo=' 'sha256-u7uqXcABaCpF23Nr2vMry8MeLkgR2fMpLfzDuLS3AWI=' 'sha256-ARbkmnKgQ61oRw5WSlXP7Ng8co/VmMhMNNgl004un08=' 'sha256-N4YUYDyNtJaRwYf/dPwx+1gRiZvH+JmKHeZLEFvZQmM=' 'sha256-fNJZMbFKOrcdNMPCh2wGh2VeNpFaJj4ZvdyPJdBBMEo=' 'sha256-kuVM3KXS4HKc9gG18/VTN1Z/7aipH8eOvS80sXOD2oY=' 'sha256-VOHyLw4UnKHUQe1qYFLIRf+9zhTaMUJP8y0drqA+bKs=' 'sha256-TsyAoDitKGSD+UTmz3rGpBPNG5Z4ihXpj6dnJGcTlcE='; img-src https://secure.epcc.ed.ac.uk/; style-src https://secure.epcc.ed.ac.uk/ 'sha256-xjGudOBJ7nxVZcG/ICJmcuEpN9UzY8nGXi7Sn0BVyUw=' 'sha256-ct0VctZeN2NHCY4B6U7le9yxQbLipadwEZd3NWfJrcY='",
+                "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+                "Access-Control-Allow-Origin":"*"
+              }
+            }
         extraConfigMap: {}
         extraContainers: null
         extraEnv: {}
@@ -1200,19 +1213,40 @@ spec:
       memory:
         limit: 8G
       profileList:
-      - description: RStudio Server Trial Container
-        display_name: RStudio Server
-        kubespawner_override:
-          image: jhayepcc/jupyter_rstudio:0.2.0.2
-          imagePullPolicy: always
-          lifecycle_hooks:
-            postStart:
-              exec:
-                command:
-                - /bin/sh
-                - -c
-                - echo Hello from overridden handler > $HOME/message; wget https://raw.githubusercontent.com/jhay-epcc/ed-dash-workshops/intro-to-stats/.Rprofile
-                  /home/jovyan/.Rprofile; touch /home/jovyan/post-hook-ran-ok
+        - description: RStudio Server - High Dimensional Statistics
+          display_name: RStudio Server - High Dimensional Statistics
+          kubespawner_override:
+            default_url: /rstudio/auth-sign-in?appUri=%2F
+            image: jhayepcc/jupyter_rstudio:0.2.0.7
+            imagePullPolicy: always
+            lifecycle_hooks:
+              postStart:
+                exec:
+                  command:
+                    - /bin/sh
+                    - '-c'
+                    - >-
+                      wget
+                      https://raw.githubusercontent.com/jhay-epcc/ed-dash-workshops/hi-dim-stats/.Rprofile
+                      -O /home/jovyan/.Rprofile; touch /home/jovyan/post-hook-ran-ok
+        - description: Jupyter Notebook - Intro to ML with Python
+          display_name: Jupyter Notebook - Introduction to Machine Learning with Python
+          kubespawner_override:
+            default_url: /lab
+            image: jhayepcc/jupyter_ml_python:0.1.0.1
+            imagePullPolicy: always
+            lifecycle_hooks:
+              postStart:
+                exec:
+                  command:
+                    - /bin/sh
+                    - '-c'
+                    - >-
+                      mkdir -p /home/jovyan/data && cp /tmp/eicu_cohort.csv
+                      /home/jovyan/eicu_cohort.csv && cp /tmp/example_los.csv
+                      /home/jovyan/example_los.csv && cp /tmp/eicu_cohort_trees.csv
+                      /home/jovyan/eicu_cohort_trees.csv && cp /tmp/chest_xrays.zip
+                      /home/jovyan/chest_xrays.zip
       storage:
         extraVolumeMounts:
         - mountPath: /dev/shm
